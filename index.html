@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>timerApp</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        font-family: "Poppins", sans-serif;
+        background-color: cyan;
+        width: 900px;
+
+      }
+      h1 {
+        text-align: center;
+        position: relative;
+        left:200px;
+        font-size: 30px;
+      }
+      div {
+        left: 450px;
+        align-items: flex-end;
+        justify-content: center;
+      }
+      h1 {
+        color: purple;
+      }
+      p {
+        position: relative;
+        left: 450px;
+        font-size: 50px;
+        color: purple;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <h1>My Dear Minu the remaining days of our marriage</h1>
+      <div>
+        <p id="days"></p>
+        <p id="hours"></p>
+        <p id="mins"></p>
+        <p id="secs"></p>
+      </div>
+    </section>
+  </body>
+  <script>
+    // the date we want to find
+    const countDate = new Date("feb 1,2024 8:00:00").getTime();
+    // the update timer
+    let x = setInterval(function () {
+      const now = new Date().getTime();
+      const distance = countDate - now;
+      let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      let hours = Math.floor(
+        (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+      );
+      let minitues = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("days").innerText = "Days:" + days + " ";
+      document.getElementById("hours").innerText = " Hours:" + hours + " ";
+      document.getElementById("mins").innerText = " Minitues:" + minitues + " ";
+      document.getElementById("secs").innerText = " Seconds:" + seconds;
+
+      if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("demo").innerHTML = "expired";
+      }
+    }, 1000);
+  </script>
+</html>
