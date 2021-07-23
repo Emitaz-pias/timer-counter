@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -62,7 +62,7 @@
         (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
       );
       let minitues = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      let seconds = Math.floor((distance % (1000 * 60)) / 100);
 
       document.getElementById("days").innerText = "Days:" + days + " ";
       document.getElementById("hours").innerText = " Hours:" + hours + " ";
@@ -71,8 +71,245 @@
 
       if (distance < 0) {
         clearInterval(x);
-        document.getElementById("demo").innerHTML = "expired";
+        document.getElementById("demo").innerHTML = "Yay!! we got married";
       }
     }, 1000);
   </script>
+</html> -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <link rel="SHORTCUT ICON" href="images/logic_logo.png" />
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <title>Logic ERP Solution</title>
+
+    <!DOCTYPE html>
+
+    <html>
+      <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+        <title>Logic ERP Solution</title>
+
+        <link
+          href="css/style_common.css"
+          rel="stylesheet"
+          type="text/css"
+          media="screen"
+        />
+
+        <script src="includes/functions.js" type="text/javascript"></script>
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <link rel="stylesheet" href="css/login_pg_red.css" type="text/css" />
+        <script
+          language="Javascript"
+          type="text/javascript"
+          src="js/jquery_easy_ip.js"
+        ></script>
+
+        <script>
+          function my_callback(json) {
+            $.ajax({
+              url:
+                "includes/common_functions_for_js.php?action=add_ip_session&ip_address=" +
+                json.IP,
+
+              async: false,
+            }).responseText;
+          }
+
+          //01714899174 khademul, print factory -- mannan
+        </script>
+      </head>
+
+      <!--EasyjQuery_Get_IP("my_callback")-->
+
+      <body class="login_body">
+        <input type="hidden" id="ipp" value="192.168.105.22" />
+
+        <div style="width: 100%; height: 150px"></div>
+
+        <div class="container">
+          <div class="login_fieldset_block">
+            <div class="login_form_block">
+              <div class="logic_logo_block">
+                <img
+                  src="images/logic/logic_logo_new.png"
+                  alt="Logic Software BD Ltd."
+                  class="logic_logo"
+                />
+              </div>
+
+              <div class="login_form">
+                <form
+                  id="login_form"
+                  name="login_form"
+                  method="post"
+                  action="/erp/login.php"
+                >
+                  <div class="user_block">
+                    <div class="user_lable">
+                      <label for="user_name" class="lable">User Name</label>
+                    </div>
+
+                    <div class="user_input">
+                      <input
+                        type="text"
+                        class="user_name"
+                        id="txt_userid"
+                        name="txt_userid"
+                        placeholder="User Name"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="password_block">
+                    <div class="password_lable">
+                      <label for="password" class="lable"> Password </label>
+                    </div>
+
+                    <div class="password_input">
+                      <input
+                        type="password"
+                        class="password"
+                        id="txt_password"
+                        name="txt_password"
+                        placeholder="Password"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="button_block">
+                    <div class="login_button">
+                      <input
+                        type="submit"
+                        class="login"
+                        id="submit"
+                        name="submit"
+                        value="Login"
+                      />
+                    </div>
+
+                    <div class="forgot_link">
+                      <a class="forgot" onclick="resetuser()"
+                        >Forgot Password? <br />
+                        Reset Password</a
+                      >
+                    </div>
+                  </div>
+
+                  <div id="tr_reset_user" style="visibility: collapse">
+                    <lable class="reset_lable">Reset User</lable>
+
+                    <input
+                      type="text"
+                      name="txt_reset_user"
+                      class="reset_user_name"
+                      placeholder="Reset User"
+                    />
+
+                    <lable class="reset_lable">Email Address</lable>
+
+                    <input
+                      type="text"
+                      name="txt_reset_email"
+                      class="reset_user_name"
+                      placeholder="Email Address"
+                    />
+                    <input
+                      type="submit"
+                      name="reset_user"
+                      class="login"
+                      style="width: 100px"
+                      value="Reset"
+                    />
+                  </div>
+
+                  <div id="footer"></div>
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <div class="produc_block">
+            <div class="product_details_block">
+              <span class="left_arrow"></span>
+
+              <span class="prod_details_heading">Product Details</span>
+
+              <span class="right_arrow"></span>
+            </div>
+
+            <div class="product_list_box">
+              <ul class="prod_list_ul">
+                <li class="prod_list_li"><span>Knitting ERP</span></li>
+
+                <li class="prod_list_li"><span>Woven ERP</span></li>
+
+                <!-- <li class="prod_list_li"></li> -->
+              </ul>
+            </div>
+
+            <div class="product_list_box">
+              <ul class="prod_list_ul">
+                <li class="prod_list_li"><span>Spinning ERP</span></li>
+
+                <li class="prod_list_li"><span>Sweater ERP</span></li>
+
+                <!-- <li class="prod_list_li"></li> -->
+              </ul>
+            </div>
+
+            <div class="product_list_box">
+              <ul class="prod_list_ul">
+                <li class="prod_list_li"><span>Planning ERP</span></li>
+
+                <li class="prod_list_li"><span>HR & Accounts</span></li>
+
+                <!-- <li class="prod_list_li"></li> -->
+              </ul>
+            </div>
+          </div>
+
+          <footer class="login_footer">
+            <div class="phone_no">+8801977692956</div>
+
+            <div class="email_address">
+              <a href="mailto:all@logicsoftbd.com">all@logicsoftbd.com</a>
+            </div>
+
+            <div class="website">
+              <a href="http://logicsoftbd.com/" target="_blank"
+                >www.logicsoftbd.com</a
+              >
+            </div>
+
+            <div class="location">
+              House#85(Apt-B5), Road#4, Block- A, Post: Banani, Dhaka-1213
+            </div>
+          </footer>
+        </div>
+      </body>
+
+      <script>
+        function resetuser() {
+          if (
+            document.getElementById("tr_reset_user").style.visibility ==
+            "visible"
+          ) {
+            document.getElementById("tr_reset_user").style.visibility =
+              "collapse";
+          } else {
+            document.getElementById("tr_reset_user").style.visibility =
+              "visible";
+          }
+        }
+
+        // if (document.getElementById('ipp').value=="") setTimeout('window.location.reload()',1000);
+      </script>
+    </html>
+  </head>
 </html>
